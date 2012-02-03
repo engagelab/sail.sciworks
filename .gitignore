@@ -1,2 +1,5 @@
 
 .classpath
+
+*.class
+/tmp
