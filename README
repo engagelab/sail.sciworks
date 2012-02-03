@@ -1,0 +1,12 @@
+To get sciworks working...
+
+1. Download version 1.x of the play! framework: http://www.playframework.org/
+
+2. to run:
+cd sail.sciworks
+play run
+
+3. import into eclipse to start developing, in eclipse:
+import > project into workspace > choose the location of the sail.sciworks
+
+happy developing!
