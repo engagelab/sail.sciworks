@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<testsuite failures="0" time="0.476" errors="0" skipped="0" tests="4" name="UserProfileTest">
+  <testcase classname="UserProfileTest" name="createAndRetrieveUser" time="0.367">
+      </testcase>
+  <testcase classname="UserProfileTest" name="tryConnectAsUser" time="0.033">
+      </testcase>
+  <testcase classname="UserProfileTest" name="createBasicProfileWithUser" time="0.062">
+      </testcase>
+  <testcase classname="UserProfileTest" name="createUserWithQuestionaires" time="0.014">
+      </testcase>
+</testsuite>

@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+.profileImageBox {
+	position: relative;
+	top: 0px; 
+	width: 200px;
+	height:237px;
+	padding: 10px;
+	padding-left: 0px;
+}
+
+#profileBox {
+	position:relative;
+	left:19px;
+	top:110px;
+	width:701px;
+	height:268px;
+	
+	z-index:1;
+	margin-right: auto;
+	
+	font-size: 12px;
+}
+
+#mainTimelineBox {
+
+	height: 150px; 
+	width: 975px; 
+	background-color: red;
+	
+}
+
+#timelineBox-1 {
+
+	column-width: 15em;
+  	column-gap: 2em;   /* shown in yellow */            
+  
+	float: left;
+	width: 325px; 
+	height: 150px;
+	background-color: #C2C2C2;
+	
+}
+
+#timelineFooter {
+         
+  
+	position: relative;
+	top: 85px;
+	text-align: center;
+	background-color: #69C93A;
+	
+}
+

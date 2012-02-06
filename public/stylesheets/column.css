@@ -1,0 +1,66 @@
+html,
+body {
+	margin:0;
+	padding:0;
+	color:#000;
+	background:#fff;
+}
+#body {
+	width:1110px;
+	margin:0 auto;
+	
+		/*background:#ddd;*/
+	background: white;
+	
+	position: relative;
+	top:100px;
+}
+#header {
+	padding:2px;
+	/*background:#fdd;*/
+	background: white;
+}
+#content-1 {
+	float:left;
+	width:220px;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-top:0px;
+	padding-bottom:10px;
+	/*background:#bfb;*/
+	background: white;
+}
+#content-2 {
+	float:right;
+	width:870px;
+}
+#content-2-1 {
+	float:left;
+	width:610px;
+	padding:10px;
+	/*background:#ddf;*/
+	background: white;
+}
+#content-2-2 {
+	float:right;
+	width:220px;
+	padding:10px;
+		/*background:#ddf;*/
+	background: white;
+}
+#footer {
+	padding:10px;
+			/*background:#ff9;*/
+	background: white;
+}
+/* Easy clearing of floats (see http://positioniseverything.net/easyclearing.html) */
+.cf:after {
+	display:block;
+	clear:both;
+	height:0;
+	visibility:hidden;
+	content:" ";
+	font-size:0;
+}
+/* Does not validate Ð use conditional comments for this bit if you want valid CSS */
+.cf {*zoom:1;}

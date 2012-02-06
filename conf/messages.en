@@ -1,0 +1,38 @@
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#
+
+validation.required=%s is required
+
+#profile
+firstname = First Name
+lastname = Last Name
+name = Name
+emailaddress = Email
+gender = Gender
+phonenumber = Phone Number
+profileimage = Profile Image
+male = Male
+female = Female
+editprofile = Edit Profile
+editprofilephoto = Edit Photo
+
+#questionaires
+questionaires = Questionaires
+noquestionaires = No have been assigned.
+
+#tasks
+assignedtasks = Assigned Tasks
+noassignedtasks = no tasks have been assigned
+status = Status
+task = Task
+description = Description
+location = Location
+
+#homeworks
+homework = Homework Assignments
+nohomework = No Homework Assignments Yet.
+
+#videos
+videos = Video Uploads
+novideo = No Video Uploads Yet.

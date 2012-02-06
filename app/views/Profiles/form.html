@@ -1,0 +1,80 @@
+#{extends 'main.html' /}  #{stylesheet 'profile.css' /}
+
+#{form @save()}
+
+<div id="profileBox">
+<h2 class="heading">Profile</h2>
+<br>
+<table width="35%" border="0">
+
+#{field 'firstname'}
+  <tr>
+    <td>
+        <label>&{'firstname'}:</label>
+        
+      </td>
+    <td><input type="text" name="${field.name}" 
+            value="${profile?.firstname}" class="${field.errorClass}" /></td>
+  </tr>
+   #{/field}
+   #{field 'lastname'}
+  <tr>
+    <td><label>&{'lastname'}:</label></td>
+    <td><input type="text" name="${field.name}" 
+            value="${profile?.lastname}" class="${field.errorClass}" /></td>
+  </tr>
+    #{/field}
+     #{field 'email'}
+  <tr>
+    <td><label>&{'emailaddress'}:</label></td>
+    <td><input type="text" name="${field.name}" 
+            value="${profile?.email}" class="${field.errorClass}" /></td>
+  </tr>
+    #{/field}
+     #{field 'gender'}
+  <tr>
+    <td><label>&{'gender'}:</label></td>
+    <td> 
+    	<select name="${field.name}" class="${field.errorClass}">
+    	#{if profile.gender == 'male'}
+    		<option value ="male" selected="SELECTED">&{'male'}:</option>
+    	#{/if}
+		#{else}
+			<option value ="male">&{'male'}:</option>
+    	#{/else}
+  			
+  		#{if profile.gender == 'female'}
+    		<option value ="female" selected="SELECTED">&{'female'}</option>
+    	#{/if}
+		#{else}
+			<option value ="female">&{'female'}</option>
+    	#{/else}
+  			
+		</select>
+    
+  </tr>
+   #{/field}
+   #{field 'phonenumber'}
+  <tr>
+    <td><label>&{'phonenumber'}:</label></td>
+    <td><input type="text" name="${field.name}" 
+            value="${profile?.phonenumber}" class="${field.errorClass}" /></td>
+  </tr>
+   #{/field}
+  <tr>
+    <td>&nbsp;</td>
+    <td align="left"> <br><input type="submit" value="Save Profile" />&nbsp;&nbsp;&nbsp;&nbsp;</td>
+  </tr>
+</table>
+ #{ifErrors}
+ 
+   <h1>Oops!</h1>
+ <br>
+ <ul>
+   #{errors}
+       <li class="error">${error}</li>
+   #{/errors}
+ </ul>
+#{/ifErrors}   
+     </div>
+#{/form}

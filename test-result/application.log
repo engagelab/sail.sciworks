@@ -1,0 +1,5 @@
+06 Feb 2012 12:44:14,566 INFO  ~ Starting /Users/anthonjp/dev/eclipse-workspaces/S3-workspace/sail.sciworks
+06 Feb 2012 12:44:14,571 INFO  ~ Module crud is available (/Users/anthonjp/dev/play-frameworks/play-1.2.3/modules/crud)
+06 Feb 2012 12:44:14,572 INFO  ~ Module secure is available (/Users/anthonjp/dev/play-frameworks/play-1.2.3/modules/secure)
+06 Feb 2012 12:44:15,191 WARN  ~ You're running Play! in DEV mode
+06 Feb 2012 12:44:15,325 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...

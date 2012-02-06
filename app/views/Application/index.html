@@ -1,4 +1,82 @@
-#{extends 'main.html' /}
-#{set title:'Home' /}
+#{extends 'main.html' /} #{set title:'SciHub' /} #{stylesheet
+'profile.css' /}
 
-#{welcome /}
+
+<div id="body">
+	<div id="header" class="cf">
+		<h3>&nbsp;Hi ${profile.firstname}!</h3>
+	</div>
+	<div id="main" class="cf">
+		<div id="content-1">
+
+			<ul>
+				<li><img class="profileImageBox"
+					src="@{'/public/images/obama.png'}" /> <!-- <img class="profileImageBox"
+					src="@{'/public/images/profile.png'}" /> 
+				
+				<li><a href="@{Profiles.form()}">&{'editprofilephoto'}</a>	
+				-->
+				<li>&nbsp
+				<li><span>&{'name'}: ${profile.firstname}
+						${profile.lastname}</span></li>
+				<li><span>&{'emailaddress'}: ${profile.email}</span></li>
+				<li><span>&{'gender'}: ${profile.gender}</span></li>
+				<li><span>&{'phonenumber'}: ${profile.phonenumber}</span></li>
+				<br>
+				<li><span><a href="@{Profiles.form()}">&{'editprofile'}</a></span></li>
+			</ul>
+		</div>
+		<div id="content-2">
+			<div id="content-2-1">
+				tasks <br> videos <br>
+
+			</div>
+			<div id="content-2-2">Questions</div>
+		</div>
+	</div>
+
+	<br>
+	<p>Timeline</p>
+	<br>
+	<div id="mainTimelineBox">
+		<div id="timelineBox-1">
+			<ul>
+			<li>Tasks
+			<li>&nbsp
+			<li>Videos
+			<li>
+			</ul>
+			<div id="timelineFooter">Classroom</div>
+		</div>
+		<div id="timelineBox-1">
+				<ul>
+			<li>Tasks
+			<li>&nbsp
+			<li>Videos
+			<li>
+			</ul>
+			<div id="timelineFooter">Museum</div>
+		</div>
+		<div id="timelineBox-1">
+				<ul>
+			<li>Tasks
+			<li>&nbsp
+			<li>Videos
+			<li>
+			</ul>
+			<div id="timelineFooter">Home</div>
+		</div>
+	</div>
+
+	<div id="footer"></div>
+</div>
+
+
+
+
+
+
+
+
+
+

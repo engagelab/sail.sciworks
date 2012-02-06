@@ -1,0 +1,18 @@
+# you describe your data using the YAML notation here
+# and then load them using Fixtures.load("data.yml")
+        
+
+    
+User(telsbotUser):
+    username: obama
+    password: obama    
+
+Profile(telsbotProfile):
+    user: telsbotUser
+    firstname: Barry
+    lastname: Obama
+    description: profile of obama
+    status: I am obama
+    gender: male
+    phonenumber: 1800PREZUSA
+    isComplete: TRUE

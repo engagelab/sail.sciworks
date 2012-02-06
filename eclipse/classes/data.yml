@@ -1,7 +1,79 @@
 # you describe your data using the YAML notation here
 # and then load them using Fixtures.load("data.yml")
+        
+Question(q1):
+    title: smartphone
+    question: Do you have a smart phone?
+    isBinary: true
 
-# User(bob):
-#   email: bob@gmail.com
-#   password: secret
-#   fullname: Bob
+Question(q2):
+    title: family
+    question: How many are you at home?
+    isBinary: false
+        
+Question(q3):
+    title: computers
+    question: How many computers do you have at home?
+    isBinary: false  
+    
+Question(q4):
+    title: internet
+    question: What do you use the internet for usually?
+    isBinary: false
+    
+Question(q5):
+    title: websites
+    question: What are your favorite websites?
+    isBinary: false
+
+Question(q6):
+    title: game
+    question: What are your favorite websites?
+    isBinary: false
+        
+Questionaire(ques1):
+    title: User survery
+    questions: [q1, q2, q3, q4, q5, q6]   
+    
+QuestionaireAssignment(quesAss1):
+    questionaire: ques1
+    hasSubmitted: false    
+
+Task(t1):
+    title: fix circuits
+    description: fixing the memory chip on the flux capacitor
+    list: PRE-VISIT
+    done: false
+
+Task(t2):
+    title: do the robot
+    description: bust a move like a robot does
+    list: VISIT
+    done: false
+
+Task(t3):
+    title: finish memory chip
+    description: connect memory chips to form super robot
+    list: POST-VISIT
+    done: true  
+
+TaskAssignment(taskAss):
+    title: just assigned
+    tasks: [t1, t2, t3]
+    
+User(telsbotUser):
+    username: telsbot
+    password: secret
+    taskAssignments: [taskAss]
+    questionaireAssignments: [quesAss1]
+    
+
+Profile(telsbotProfile):
+    user: telsbotUser
+    firstname: tels J.
+    lastname: bot
+    description: profile of telsbot
+    status: I am telsbot
+    gender: female
+    phonenumber: 93428502
+    isComplete: false
