@@ -32,7 +32,9 @@ public class Profiles extends Controller {
 		if (validation.hasErrors()) {
 			render("@form", profile);
 		} else {
+			profile.isComplete = true;
 			profile.save();
+			Application.index();
 		}
 
 	}
