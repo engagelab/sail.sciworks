@@ -102,7 +102,7 @@ public class Security extends controllers.Secure.Security {
 				// redirect to the teacher dashboard
 				redirect(Router.reverse("TeacherDashboard.show").url);
 			} else if (userKind.equals("Student")) {
-			    if( profile.isComplete ) {
+			    if( profile.isComplete == true ) {
 			    	Application.index();
 			    } else {
 			    	Profiles.form();

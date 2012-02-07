@@ -43,6 +43,6 @@ public class Profile extends Model {
 	
 	@Override
 	public String toString() {
-		return "User id:" + user.id + "\n " + "profile id: " + id + " name: " + firstname + " " + lastname;
+		return "User id:" + user.id + "\n " + "profile id: " + id + " name: " + firstname + " " + lastname + "is profile complete: " + isComplete;
 	}
 }

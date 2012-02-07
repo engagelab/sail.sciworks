@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<testsuite failures="0" time="0.476" errors="0" skipped="0" tests="4" name="UserProfileTest">
-  <testcase classname="UserProfileTest" name="createAndRetrieveUser" time="0.367">
+<testsuite failures="0" time="0.454" errors="0" skipped="0" tests="5" name="UserProfileTest">
+  <testcase classname="UserProfileTest" name="createAndRetrieveUser" time="0.26">
       </testcase>
-  <testcase classname="UserProfileTest" name="tryConnectAsUser" time="0.033">
+  <testcase classname="UserProfileTest" name="tryConnectAsUser" time="0.073">
       </testcase>
-  <testcase classname="UserProfileTest" name="createBasicProfileWithUser" time="0.062">
+  <testcase classname="UserProfileTest" name="createBasicProfileWithUser" time="0.076">
       </testcase>
-  <testcase classname="UserProfileTest" name="createUserWithQuestionaires" time="0.014">
+  <testcase classname="UserProfileTest" name="createUserWithQuestionaires" time="0.015">
+      </testcase>
+  <testcase classname="UserProfileTest" name="profilePropertiesWithUser" time="0.03">
       </testcase>
 </testsuite>

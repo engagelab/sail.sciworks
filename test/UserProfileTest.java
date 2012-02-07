@@ -120,7 +120,7 @@ public class UserProfileTest extends UnitTest {
     	
     }
     
-    //@Test
+    @Test
     public void profilePropertiesWithUser() {
 		Profile profile = getProfile();
 		profile.gender = gender;
