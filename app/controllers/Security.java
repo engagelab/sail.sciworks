@@ -86,7 +86,6 @@ public class Security extends controllers.Secure.Security {
 	    	profile = new Profile(user, null, null).save();
 	    }
 	    
-	    profile.isComplete = false;
 	    session.put("profile.id", profile.id);
 		
 	    // figure out what kind of user this is based on data in Rollcall
