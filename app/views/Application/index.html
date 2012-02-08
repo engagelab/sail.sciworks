@@ -71,6 +71,18 @@
 	<div id="footer"></div>
 </div>
 
+*{ Display a post in one of these modes: 'full', 'home' or 'teaser' }*
+  
+#{if _as == 'full'}
+        #{list items:_post.posticks, as:'postick'}
+            <div style="left: ${postick.postickLeftPos}px; top: ${postick.postickTopPos}px;" class="postick ui-draggable">
+		               <div class="toolbar"><img width="20px" src="drag.png">
+		               <button class="delete">Delete</button></div>
+		               <div contenteditable="true" class="editable">${postick.content.escape().nl2br()}<br _moz_dirty=""></div>
+	               </div>
+        #{/list}
+#{/if}
+
 
 
 

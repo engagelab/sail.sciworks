@@ -3,3 +3,15 @@
 
 *.class
 /tmp
+
+eclipse/Test sail.sciworks.launch
+
+conf/application.conf
+
+eclipse/Test sail.sciworks.launch
+
+conf/application.conf
+
+bin/
+
+eclipse/classes/views/Secure/login.html
