@@ -1,9 +1,21 @@
 package controllers;
 
+import java.util.List;
+
+import models.*;
+
 import play.*;
+import play.db.jpa.JPABase;
+import play.libs.Codec;
 import play.mvc.*;
 
-@Check("admin")
-@With(Secure.class)
-public class Scenes extends CRUD {    
+public class Scenes extends CRUD { 
+	
+	
+	//Render Scene by ID
+    public static void index(Long sceneId) {
+        Scene scene = Scene.findById(sceneId);
+        List<Postick> posticks = scene.posticks;
+        render(posticks);
+    }
 }

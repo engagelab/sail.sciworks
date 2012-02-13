@@ -36,10 +36,31 @@ public class Scene extends Model {
         this.postedAt = new Date();
     }
     
-    //Added Postick position
-    public Scene addPostick(String author, String content, int PostickLeftPos, int PostickTopPos ) {
-        Postick newPostick = new Postick(this, author, content, PostickLeftPos, PostickTopPos );
+    //Create Empty Postick and return SceneID
+    public Long createEmptyPostick(String author) {
+    	
+    	//create defaut parameters for the empty postick
+    	String content = "";
+    	int postickLeftPos = 0;
+    	int postickTopPos = 0;
+    	
+        Postick newPostick = new Postick(this, author, content, postickLeftPos, postickTopPos);
         this.posticks.add(newPostick);
+        this.save();
+        //Return the Postick index
+        return newPostick.id;
+    }
+    
+    //Update Postick by ID
+    public Scene updatePostick(Long postickId, String content, int postickLeftPos, int postickTopPos) {
+        Postick newPostick = Postick.findById(postickId);
+        newPostick.content = content;
+        newPostick.postickLeftPos = postickLeftPos;
+        newPostick.postickTopPos = postickTopPos;
+        
+        //this.posticks.add(ID, newPostick);
+        //this.posticks.add(newPostick);
+        //update the scene with new postick
         this.save();
         return this;
     }

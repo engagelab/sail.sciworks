@@ -2,9 +2,10 @@ package models;
  
 import java.util.*;
 import javax.persistence.*;
- 
-import play.db.jpa.*;
+
+import play.data.binding.*;
 import play.data.validation.*;
+import play.db.jpa.Model;
  
 @Entity
 public class Postick extends Model {
@@ -40,6 +41,9 @@ public class Postick extends Model {
         this.postickTopPos = postickTopPos;
         
     }
+    
+
+    
     
     public String toString() {
         return content.length() > 50 ? content.substring(0, 50) + "..." : content;
