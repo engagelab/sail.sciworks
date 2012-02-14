@@ -37,32 +37,22 @@ public class Scene extends Model {
     }
     
     //Create Empty Postick and return SceneID
-    public Long createEmptyPostick(String author) {
+    public Postick createPostick(String author) {
     	
     	//create defaut parameters for the empty postick
     	String content = "";
-    	int postickLeftPos = 0;
-    	int postickTopPos = 0;
+    	float postickLeftPos = 0.0f;
+    	float postickTopPos = 0.0f;
     	
         Postick newPostick = new Postick(this, author, content, postickLeftPos, postickTopPos);
         this.posticks.add(newPostick);
         this.save();
         //Return the Postick index
-        return newPostick.id;
-    }
-    
-    //Update Postick by ID
-    public Scene updatePostick(Long postickId, String content, int postickLeftPos, int postickTopPos) {
-        Postick newPostick = Postick.findById(postickId);
-        newPostick.content = content;
-        newPostick.postickLeftPos = postickLeftPos;
-        newPostick.postickTopPos = postickTopPos;
+        //return (long)this.posticks.indexOf(newPostick);
+        //return newPostick.id;
         
-        //this.posticks.add(ID, newPostick);
-        //this.posticks.add(newPostick);
-        //update the scene with new postick
-        this.save();
-        return this;
+        //return unique random id
+        return newPostick;
     }
     
     public Scene previous() {

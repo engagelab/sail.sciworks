@@ -6,15 +6,19 @@ import javax.persistence.*;
 import play.data.binding.*;
 import play.data.validation.*;
 import play.db.jpa.Model;
+import play.libs.Codec;
  
 @Entity
 public class Postick extends Model {
 	
 	@Required
-    public int postickLeftPos;
+    public float postickLeftPos;
 	
 	@Required
-    public int postickTopPos;
+    public float postickTopPos;
+	
+	@Required
+	public String randomId;
 	
  
     @Required
@@ -32,10 +36,11 @@ public class Postick extends Model {
     @Required
     public Scene scene;
     
-    public Postick(Scene scene, String author, String content, int postickLeftPos, int postickTopPos ) {
+    public Postick(Scene scene, String author, String content, float postickLeftPos, float postickTopPos ) {
         this.scene = scene;
         this.author = author;
         this.content = content;
+        this.randomId = Codec.UUID();
         this.postedAt = new Date();
         this.postickLeftPos = postickLeftPos;
         this.postickTopPos = postickTopPos;

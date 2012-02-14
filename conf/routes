@@ -7,7 +7,21 @@ GET     /                                       Secure.login
 GET     /profile                          		Profiles.form
 POST    /profile                          		Profiles.save
 
-#GET     /                                       Application.index
+# Rendering Scene
+GET     /scenes/{<[0-9]+>id}                   Application.index
+
+#Add Postick
+GET	/Posticks/								Application.createPostick
+PUT	/										Application.updatePostick
+DELETE	/									Application.deletePostick
+
+
+
+
+
+
+
+#Update Postick
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

@@ -34,6 +34,7 @@ public class Application extends Controller {
 	    Scene scene = scenes.get(0);
 	    List<Postick> posticks = scene.posticks;
 	    render(profile, user, scenes,posticks);
+	    render(profile, user, scenes, posticks);
 	}
 	
     //Create an empty Postick and return its Unique ID to Client to update the contents
