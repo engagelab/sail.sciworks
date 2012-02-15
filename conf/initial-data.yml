@@ -14,3 +14,49 @@ Profile(telsbotProfile):
     gender: male
     phonenumber: 1800PREZUSA
     isComplete: TRUE
+    
+Scene(firstBobPost):
+    title:          About the model layer
+    postedAt:       2009-06-14
+    author:         telsbotUser
+    content:        Static Content- Picture 1
+
+Scene(secondBobPost):
+    title:          Testing Sciworks
+    postedAt:       2009-03-25
+    author:         telsbotUser      
+    content:        Well, it's just a test.
+                    
+Scene(jeffPost):
+    title:          The MVC application
+    postedAt:       2009-06-06
+    author:         telsbotUser
+    content:        Static Contents. Picture 2
+                    
+Postick(c1):
+    author:         obama
+    content:        You are right !
+    randomId:        
+    postedAt:       2009-06-14
+    scene:          firstBobPost
+    postickLeftPos: 550
+    postickTopPos:  20
+
+    
+Postick(c2):
+    author:         obama
+    content:        I knew that ...
+    randomId:        
+    postedAt:       2009-06-15
+    scene:          firstBobPost   
+    postickLeftPos: 250
+    postickTopPos:  100
+    
+Postick(c3):
+    author:         obama
+    content:        This post is useless ?
+    randomId:        
+    postedAt:       2009-04-05
+    scene:          secondBobPost    
+    postickLeftPos: 210
+    postickTopPos:  190

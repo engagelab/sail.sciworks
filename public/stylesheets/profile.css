@@ -9,6 +9,9 @@
 	padding-left: 0px;
 }
 
+
+#temp { color:black; }
+
 #profileBox {
 	position:relative;
 	left:19px;

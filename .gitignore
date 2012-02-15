@@ -15,3 +15,5 @@ conf/application.conf
 bin/
 
 eclipse/classes/views/Secure/login.html
+
+app/.DS_Store

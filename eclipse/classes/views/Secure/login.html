@@ -1,81 +1,36 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<title>SciHub - Login</title>
-<meta http-equiv="Content-Type"
-        content="text/html; charset=${_response_encoding}" />
-<link rel="stylesheet" type="text/css" media="screen"
-        href="@{'/public/stylesheets/secure.css'}" />
-        <script src="@{'/public/javascripts/jquery-1.5.2.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-</head>
-<body>
+#{extends 'Secure/layout.html' /}
 
-        <div id="background">
-                <img src="@{'/public/images/top.png'}" class="stretch" alt="" /> <img
-                        src="@{'/public/images/logo.png'}" class="logo" alt="" />
-        </div>
-
-
-
-        #{form @authenticate()}
-
-        <h1>&{'secure.title'}</h1>
-
-
-
-        <div id="loginBox">
-                <table width="" border="0">
-                        <tr>
-                                <td width="29%" rowspan="5"><img
-                                        src="@{'/public/images/avatar.png'}" width="194" height="178"
-                                        alt="avatar" /></td>
-                                <td colspan="3">&nbsp;</td>
-                        </tr>
-
-
-                        <tr>
-                                <td height="96" colspan="2"><p id="username-field">
-                                                <label for="username" class="loginLabel">&{'secure.username'}</label>
-                                                <input type="text" name="username" id="username"
-                                                        value="${flash.username}" />
-                                        </p>
-                                        <p id="password-field">
-                                                <label for="password" class="loginLabel">&{'secure.password'}&nbsp</label>
-                                                <input type="password" name="password" id="password" value="" />
-                                        </p></td>
-                        </tr>
-                        <tr>
-                                <td width="20%" align="right" valign="middle"><p
-                                                valign="middle" id="remember-field2">
-
-                                                <input type="checkbox" name="remember" id="remember" value="true"
-                                                        ${flash.remember ? 'checked="true" ' : ''} /> <label
-                                                        for="remember" class="loginLabel">&{'secure.remember'} </label>
-                                        </p></td>
-                                <td width="15%" align="right" valign="middle"><input
-                                        id="signin" type="image" src="@{'/public/images/login.png'}"
-                                        alt="submit" HEIGHT="38" WIDTH="80" />&nbsp</td>
-                                <td width="40%" align="right"></td>
-                        </tr>
-                         <tr>
-                        <td>&nbsp;</td>
-                        <td align="center"><a id="no" href="@{Application.changeLanguage('no')}" ><img src="@{'/public/images/norway_flag.png'}" width="32" height="32" /></a>&nbsp;&nbsp;<a id="en" href="@{Application.changeLanguage('en')}"><img src="@{'/public/images/english_flag.png'}"  width="32" height="32" /></a></td>
-                        <td>&nbsp;</td>
-                        <td>&nbsp;</td>
-                </tr>
-                        <tr>
-                                
-                                <td colspan="4" align="left" valign="middle" height="30px">
-                                #{if flash.error}
-                                        <p class="error">&{flash.error}</p> #{/if} #{if flash.success}
-                                        <p class="success">&{flash.success}</p> #{/if}
-
-                                </td>
-                        </tr>
-                </table>
-
-        </div>
-
-
-        #{/form}
-</body>
-</html>
+<div id="login">
+	
+	<h1>&{'secure.title'}</h1>
+		
+	#{form @authenticate()}
+		
+		#{if flash.error}
+			<p class="error">
+				&{flash.error}
+			</p>
+		#{/if}
+		#{if flash.success}
+			<p class="success">
+				&{flash.success}
+			</p>
+		#{/if}
+	
+		<p id="username-field">
+			<label for="username">&{'secure.username'}</label>
+			<input type="text" name="username" id="username" value="${flash.username}" />
+		</p>
+		<p id="password-field">
+			<label for="password">&{'secure.password'}</label>
+			<input type="password" name="password" id="password" value="" />
+		</p>
+		<p id="remember-field">
+			<input type="checkbox" name="remember" id="remember" value="true" ${flash.remember ? 'checked="true"' : ''} />
+			<label for="remember">&{'secure.remember'}</label>
+		</p>
+		<p id="signin-field">
+			<input type="submit" id="signin" value="&{'secure.signin'}" />
+		</p>
+	#{/form}
+</div>

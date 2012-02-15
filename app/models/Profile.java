@@ -25,7 +25,7 @@ public class Profile extends Model {
 	public String phonenumber;
 	
 	public Date timestamp;
-	
+		
 	public boolean isComplete;
 	
 	public Blob picture;

@@ -11,9 +11,10 @@ POST    /profile                          		Profiles.save
 GET     /scenes/{<[0-9]+>id}                   Application.index
 
 #Add Postick
-GET	/Posticks/								Application.createPostick
-PUT	/										Application.updatePostick
+GET	/Posticks								Application.createPostick
+PUT	/Posticks								Application.updatePostick
 DELETE	/									Application.deletePostick
+
 
 
 

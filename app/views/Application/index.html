@@ -1,5 +1,4 @@
-#{extends 'main.html' /} #{set title:'SciHub' /} #{stylesheet
-'profile.css' /}
+#{extends 'main.html' /} #{set title:'SciHub' /} #{stylesheet 'profile.css' /}
 
 
 <div id="body">
@@ -29,7 +28,11 @@
 		<div id="content-2">
 			<div id="content-2-1">
 				tasks <br> videos <br>
-
+					 #{list items:scenes, as:'scene'}
+            			<div id="sceneList">
+		               <a href="@{Scenes.index( scene.id )}"> ${scene.title.escape().nl2br()}</a>
+	               		</div>
+        			#{/list}
 			</div>
 			<div id="content-2-2">Questions</div>
 		</div>
@@ -38,50 +41,12 @@
 	<br>
 	<p>Timeline</p>
 	<br>
-	<div id="mainTimelineBox">
-		<div id="timelineBox-1">
-			<ul>
-			<li>POST IT NOTES
-			<li>&nbsp
-			<li>POST IT NOTES
-			<li>
-			</ul>
-			<div id="timelineFooter">Classroom</div>
-		</div>
-		<div id="timelineBox-1">
-				<ul>
-			<li>Tasks
-			<li>&nbsp
-			<li>Videos
-			<li>
-			</ul>
-			<div id="timelineFooter">Museum</div>
-		</div>
-		<div id="timelineBox-1">
-				<ul>
-			<li>Tasks
-			<li>&nbsp
-			<li>Videos
-			<li>
-			</ul>
-			<div id="timelineFooter">Home</div>
-		</div>
-	</div>
+
 
 	<div id="footer"></div>
 </div>
 
-*{ Display a post in one of these modes: 'full', 'home' or 'teaser' }*
-  
-#{if _as == 'full'}
-        #{list items:_post.posticks, as:'postick'}
-            <div style="left: ${postick.postickLeftPos}px; top: ${postick.postickTopPos}px;" class="postick ui-draggable">
-		               <div class="toolbar"><img width="20px" src="drag.png">
-		               <button class="delete">Delete</button></div>
-		               <div contenteditable="true" class="editable">${postick.content.escape().nl2br()}<br _moz_dirty=""></div>
-	               </div>
-        #{/list}
-#{/if}
+
 
 
 
