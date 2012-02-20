@@ -1,0 +1,10 @@
+
+#{list items:posticks, as:'postick'}
+{
+	content:${postick.content}
+	randomId:${postick.randomId}
+	topPos:${postick.postickTopPos}
+	LeftPos:${postick.postickLeftPos}
+	
+}
+#{/list}

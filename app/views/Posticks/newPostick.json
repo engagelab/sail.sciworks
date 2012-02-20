@@ -1,0 +1,9 @@
+{
+"eventType": "creation_postit",
+"payload": {
+       "id":${postick.randomId},
+       "message":"200",                  
+},
+"timestamp": ${postick.postedAt},
+"origin": "postit-service",
+}

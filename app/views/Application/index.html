@@ -30,7 +30,7 @@
 				tasks <br> videos <br>
 					 #{list items:scenes, as:'scene'}
             			<div id="sceneList">
-		               <a href="@{Scenes.index( scene.id )}"> ${scene.title.escape().nl2br()}</a>
+		               <a href="@{Scenes.renderScene( scene.id )}"> ${scene.title.escape().nl2br()}</a>
 	               		</div>
         			#{/list}
 			</div>

@@ -1,0 +1,31 @@
+#{extends 'main2.html' /}
+#{set title:'Home' /}
+
+#{form @createJSONPostick()}
+    <input type="text" name="postick.author"/>
+    <input type="text" name="postick.sceneId"/>
+    <input type="submit"/>
+#{/form}
+
+<ul id="bars">
+
+</ul>
+
+#{set 'moreScripts'}
+<script type="text/javascript">
+jQuery.ajax({
+    url: http://localhost:9000/application/getJSON,
+    type: "POST",
+    data: {name: "amit", id:1 },
+    dataType: "json",
+    beforeSend: function(x) {
+      if (x && x.overrideMimeType) {
+        x.overrideMimeType("application/j-son;charset=UTF-8");
+      }
+    },
+    success: function(result) {
+    //Write your code here
+    }
+});
+</script>
+#{/set}

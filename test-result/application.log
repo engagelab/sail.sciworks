@@ -1,7 +1,6 @@
-07 Feb 2012 13:29:57,487 INFO  ~ Starting /Users/anthonjp/dev/eclipse-workspaces/S3-workspace/sail.sciworks
-07 Feb 2012 13:29:57,492 INFO  ~ Module crud is available (/Users/anthonjp/dev/eclipse-workspaces/S3-workspace/sail.sciworks/module-store/crud)
-07 Feb 2012 13:29:57,493 INFO  ~ Module secure is available (/Users/anthonjp/dev/eclipse-workspaces/S3-workspace/sail.sciworks/module-store/secure)
-07 Feb 2012 13:29:58,235 WARN  ~ You're running Play! in DEV mode
-07 Feb 2012 13:29:58,362 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
-07 Feb 2012 13:30:12,327 INFO  ~ Connected to jdbc:mysql://129.240.213.228:3306/sciworks?useUnicode=yes&characterEncoding=UTF-8&connectionCollation=utf8_general_ci
-07 Feb 2012 13:30:13,914 INFO  ~ Application 'sail.sciworks' is now started !
+17 Feb 2012 14:19:59,599 INFO  ~ Starting /Users/junior/dev/workspaces/sail.sciworks/.
+17 Feb 2012 14:19:59,607 INFO  ~ Module crud is available (/Users/junior/dev/play-1.2.4/modules/crud)
+17 Feb 2012 14:19:59,608 INFO  ~ Module secure is available (/Users/junior/dev/play-1.2.4/modules/secure)
+17 Feb 2012 14:20:00,371 WARN  ~ You're running Play! in DEV mode
+17 Feb 2012 14:20:04,280 INFO  ~ Connected to jdbc:mysql://129.240.213.228:3306/sciworks_fahied?useUnicode=yes&characterEncoding=UTF-8&connectionCollation=utf8_general_ci
+17 Feb 2012 14:20:06,390 INFO  ~ Application 'sail.sciworks' is now started !
