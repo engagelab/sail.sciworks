@@ -10,31 +10,33 @@ import play.libs.Codec;
  
 @Entity
 public class Postick extends Model {
+	 @ManyToOne
+	    @Required
+	    public Scene scene;
 	
+	@Required
+	 public String author;
+	 
+    @Lob
+    @Required
+    @MaxSize(10000)
+    public String content;
+	 
 	@Required
     public float postickLeftPos;
 	
 	@Required
     public float postickTopPos;
 	
-	@Required
-	public String randomId;
-	
- 
-    @Required
-    public String author;
-    
     @Required
     public Date postedAt;
-     
-    @Lob
-    @Required
-    @MaxSize(10000)
-    public String content;
     
-    @ManyToOne
-    @Required
-    public Scene scene;
+	@Required
+	public String randomId;
+//	
+//	public static List<Postick> findall(){
+//		return Postick.findall();
+//	}
     
     public Postick(Scene scene, String author, String content, float postickLeftPos, float postickTopPos ) {
         this.scene = scene;
@@ -50,7 +52,15 @@ public class Postick extends Model {
 
     
     
-    public String toString() {
+    public Postick() {
+		// TODO Auto-generated constructor stub
+    	
+	}
+
+
+
+
+	public String toString() {
         return content.length() > 50 ? content.substring(0, 50) + "..." : content;
     }
  

@@ -8,19 +8,21 @@ GET     /profile                          		Profiles.form
 POST    /profile                          		Profiles.save
 
 # Rendering Scene
-GET     /scenes/{<[0-9]+>id}                   Application.index
+GET     /scenes                   				Scene.renderScene
 
 #Add Postick
-GET	/Posticks								Application.createPostick
-PUT	/Posticks								Application.updatePostick
-DELETE	/									Application.deletePostick
+GET		/Posticks								Application.createPostick
+POST    /Posticks								Application.createJSONPostick
+PUT		/Posticks								Application.updatePostick
+DELETE	/Posticks								Application.deletePostick
 
+GET 	/Show									Application.showPosticks
 
-
-
-
-
-
+POST	/GetJSON								Application.getJSON
+#JSON TESTING
+GET     /Bar/                                    Application.index2
+POST    /Bar/                                    Application.addBar
+GET     /Bar/bars.json                          Application.listBars
 
 #Update Postick
 

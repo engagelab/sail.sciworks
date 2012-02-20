@@ -10,12 +10,10 @@ import play.libs.Codec;
 import play.mvc.*;
 
 public class Scenes extends CRUD { 
-	
-	
 	//Render Scene by ID
-    public static void index(Long sceneId) {
+    public static void renderScene(Long sceneId) {
         Scene scene = Scene.findById(sceneId);
         List<Postick> posticks = scene.posticks;
-        render(posticks);
+        renderTemplate("render/scene.json", posticks);
     }
 }

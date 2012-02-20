@@ -5,7 +5,12 @@ package controllers;
 // core dependencies
 import java.util.List;
 
+import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+
+import flexjson.JSONSerializer;
 
 import play.i18n.Lang;
 import play.mvc.Controller;
@@ -27,39 +32,52 @@ public class Application extends Controller {
 	 * Render LogIN and User Profile Page
 	 */
 	public static void index() {
-		
 		Profile profile = Profiles.getCurrentProfile();
 		String username = Security.connected();	    
 	    User user = User.findUserByUsername(username);
-	    
 	    List<Scene> scenes = Scene.findAll();
-	    Scene scene = scenes.get(0);
-	    List<Postick> posticks = scene.posticks;
-	    render(profile, user, scenes, posticks);
+	    render(profile, user, scenes);
 	}
+	
+	     public static void getJSON(JsonObject json){
+	    	 Postick postick = new Postick();
+	    	 //Scene.all().first();
+	    	 JSONSerializer modelSerializer = new JSONSerializer().include("author","scene").exclude("*");
+	    	 renderJSON(modelSerializer.serialize(postick));
+	    	 renderText(postick);
+//	     FirstModel model = FirstModel.all().fetch();
+//	     JSONSerializer modelSerializer = new JSONSerializer().include("company","secondmodel.id","secondmodel.test").exclude("*");
+	     //renderJSON(modelSerializer.serialize(postick));
+	    }
 	
     //Create an empty Postick and return its Unique ID to Client to update the contents
 	public static void createPostick(){
+		
 			String author = params.get("author");
 		 	Long sceneId = params.get("sceneId",Long.class);
 	        Scene scene = Scene.findById(sceneId);
 	        notFoundIfNull(scene);
 	        //store random id
-	        Postick nPostick = scene.createPostick(author);
-	        String rId = nPostick.randomId;
-	        String timestamp = nPostick.postedAt.toString();
-	        renderJSON("{\"eventType\":\"creation_postit\", \"payload\":{ \"id\" : "+rId+" ,\"message\": \"200\"}, \"timestamp\":"+timestamp+",\"origin\":\"postit-service\" }");
-	        //renderJSON(new StatusMessage(nPostick.randomId, nPostick.postedAt));
+	        Postick postick = scene.createPostick(author);
+	        renderTemplate("Posticks/newPostick.json", postick);
 	    }
 	
-	public static void createPosticksJSON(Long id) {
-		//renderJSON(new StatusMessage(id, "create_postit"));
+	
+	public static void createJSONPostick(JsonObject json){ 
+		renderJSON(json);
+		//JsonElement jsonElement = json.get("author");
+		//JsonElement jsonElement2 = json.get("sceneId");
+		//System.out.println(jsonElement);
+		renderText(json);
 	}
 	
+	
+	
 	//Update the Postick Contents by JSON
-	public static void updatePostick(){
+	public static void updatePostick(JsonObject jso){
 		//MyObject myObject = new GsonBuilder().create().fromJson(params.get("saveIt"), MyObject.class);
 		Postick myPostick = new GsonBuilder().create().fromJson(params.get("saveIt"), Postick.class);
+		//Postick myPostick = new Gson().fromJson(jso, Postick.class);
 
 			//Get data from params
 			String randomId			= myPostick.randomId;
@@ -73,6 +91,7 @@ public class Application extends Controller {
 		    newPostick.postickLeftPos = postickLeftPos;
 		    newPostick.postickTopPos = postickTopPos;
 		    newPostick.save();
+		    renderTemplate("Posticks/status.json");
 	    }
 
 //	public static void updatePostick(){
@@ -95,6 +114,7 @@ public class Application extends Controller {
 	public static void deletePostick(){
 		String randomId = params.get("randomId");
 		Postick.delete("from Postick p where p.randomId=?", randomId);
+		renderTemplate("Posticks/status.json");
 	}
 	
 
@@ -108,4 +128,33 @@ public class Application extends Controller {
 			e.printStackTrace();
 		}
 	}
+	
+	//JSON TESTING
+    public static void index2() {
+        render();
+    }
+    
+
+
+    public static void addBar(Bar bar) {
+        bar.save();
+        index2();
+    }
+    
+    public static void listBars() {
+        renderJSON(Bar.findAll());
+    }
+    
+    
+    public static void index3() {
+        render();
+    }
+    public static void addPostick(Postick postick) {
+    	postick.save();
+        index3();
+    }
+    
+    public static void listPosticks() {
+        renderJSON(Postick.findAll());
+    }
 }

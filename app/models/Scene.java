@@ -30,6 +30,7 @@ public class Scene extends Model {
     
     public Scene(User author, String title, String content) { 
         this.posticks = new ArrayList<Postick>();
+        //Author and User
         this.author = author;
         this.title = title;
         this.content = content;
@@ -47,11 +48,6 @@ public class Scene extends Model {
         Postick newPostick = new Postick(this, author, content, postickLeftPos, postickTopPos);
         this.posticks.add(newPostick);
         this.save();
-        //Return the Postick index
-        //return (long)this.posticks.indexOf(newPostick);
-        //return newPostick.id;
-        
-        //return unique random id
         return newPostick;
     }
     
